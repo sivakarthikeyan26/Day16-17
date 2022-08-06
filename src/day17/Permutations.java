@@ -53,6 +53,10 @@ public class Permutations {
         }  
         return flag;
     }
+	/**
+	 * main method to get the string from user for permutation computation.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the string");

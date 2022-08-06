@@ -3,7 +3,10 @@ package day17;
 
 public class PrimeNumbers {
 	
-	
+	/**
+	 * Method to check the prime no
+	 * @param n
+	 */
 	public static void checkPrime(int n) {
 		int count=0;
 		for(int i=1;i<=n;i++) {
@@ -16,6 +19,11 @@ public class PrimeNumbers {
 		}
 		
 	}
+	
+	/**
+	 * Main function to input nos from 0-1000
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		System.out.println("Enter the number for prime check :");
 		for(int i=1;i<=1000;i++) {
