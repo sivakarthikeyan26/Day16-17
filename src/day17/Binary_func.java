@@ -28,6 +28,10 @@ public class Binary_func {
 	                prev=temp;
 	                temp=temp.right;
 	            }
+	            else if (key.compareTo(temp.val)==0){
+	                prev=temp;
+	                temp=temp.right;
+	            }
 	        }
 	        if(key.compareTo(prev.val)<0)
 	            prev.left=node;
@@ -60,7 +64,7 @@ public class Binary_func {
 	          //If value is found in the given binary tree then, set the flag to true  
 	          if(val.compareTo(temp.val)==0){  
 	            flag = true;  
-	            System.out.println("found");
+	            System.out.println("\nfound");
 	               return;  
 	          }  
 	          //Search in left subtree  
