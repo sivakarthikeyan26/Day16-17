@@ -2,12 +2,12 @@ package day17;
 
 public class Linked_func {
 	Linked_node head;
-	boolean flag=false;
+	
 	
 	/*
 	 * Method to add the value to linked list.
 	 */
-	public void add(String value) {
+	public void add(int value) {
 		if(head!=null) {
 			Linked_node newnode =  new Linked_node(value);
 			Linked_node temp=head;
@@ -21,19 +21,50 @@ public class Linked_func {
 			head=newnode;
 		}
 	}
+	/**
+	 * Method to add the number if it is not present in the list.
+	 * @param value
+	 */
+	public void addExtra(int value) {
+		if(head!=null) {
+			Linked_node newnode =  new Linked_node(value);
+			Linked_node temp=head;
+			Linked_node prev=temp;
+			while(temp.next!=null) {
+				if(value>temp.val && value<=temp.next.val) {
+					prev=temp;
+					temp=temp.next;
+					prev.next=newnode;
+					newnode.next=temp;
+					return;
+				}
+				else {
+					prev=temp;
+					temp=temp.next;
+				}
+			}
+			temp.next=newnode;
+		}
+		else {
+			Linked_node newnode =  new Linked_node(value);
+			head=newnode;
+		}
+	}
+	
 	
 	/**
 	 * Method to search for the value and delete the word if it is present in the linked list.
 	 * @param value
 	 */
-	public void search(String value) {
+	public void search(int value) {
+		boolean flag=false;
 		/*
 		 * deleting if the value is present is the head node.
 		 */
 		if(head!=null) {
-			if(value.compareTo(head.val)==0) {
+			if(head.val==value) {
 				flag=true;
-				System.out.println("word found and deleting from list");
+				System.out.println("number found and deleting from list");
 				Linked_node temp = head;
 				Linked_node prev = temp;
 				temp=temp.next;
@@ -48,9 +79,9 @@ public class Linked_func {
 				Linked_node temp = head;
 				Linked_node prev = temp;
 				while(temp.next!=null) {
-					if(value.compareTo(temp.val)==0) {
+					if(temp.val==value) {
 						flag=true;
-						System.out.println("word found2 and deleting from list");
+						System.out.println("word found and deleting from list");
 						prev.next=temp.next;
 						return;
 					}
@@ -62,9 +93,9 @@ public class Linked_func {
 				/*
 				 * deleting if the word is present in the end of the linked list.
 				 */
-				if(value.compareTo(temp.val)==0) {
+				if(temp.val==value) {
 					flag=true;
-					System.out.println("word found and deleting from list");
+					System.out.println("number found and deleting from list");
 					prev.next=null;
 					return;
 				}
@@ -78,8 +109,8 @@ public class Linked_func {
 		 * adding the word to linked list if the word is not found in the list.
 		 */
 		if(flag==false) {
-			System.out.println("word is not found in the list so the word is added to the liked list");
-			add(value);
+			System.out.println("number is not found in the list so the word is added to the liked list");
+			addExtra(value);
 		}
 		
 	}
