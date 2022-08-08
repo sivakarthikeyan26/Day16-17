@@ -11,14 +11,15 @@ public class Anagram {
 	 * @param j
 	 * @return
 	 */
-	public static String swapString(String a, int i, int j) {  
+	
+	public static String swapString(String a, int i, int j) {
         char[] b =a.toCharArray();  
         char ch;  
         ch = b[i];  
         b[i] = b[j];  
-        b[j] = ch;  
-        return String.valueOf(b);  
-    }  
+        b[j] = ch;
+        return String.valueOf(b);
+    }
 	
 	/**
 	 * Function to generate the permutation

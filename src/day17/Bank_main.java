@@ -11,6 +11,7 @@ public class Bank_main {
 	 */
 	public static void main(String[] args) {
 		Bank_func bf = new Bank_func();
+		
 		boolean flag=true;
 		while(flag) {
 			System.out.println("1.Add person to the queue\n2.Perform simulation\n3.exit program");
